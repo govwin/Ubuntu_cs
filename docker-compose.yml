@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+
+  ubuntu1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu1
+#    disable use of image and instead use dockerfile
+#    image: ubuntu
+#    restart: always
+    ports:
+      - 81:80
+    volumes:
+      - ./localvolume/:/insidecontainer
+
+  ubuntu2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu2
+#    disable use of image and instead use dockerfile
+#    image: ubuntu
+#    restart: always
+    ports:
+      - 82:80
+    volumes:
+      - ./localvolume/:/insidecontainer
+
+
+
